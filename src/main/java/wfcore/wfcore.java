@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package wfcore;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -14,11 +14,15 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import wfcore.Tags;
+import wfcore.machines.WFCoreTileEntities;
+import wfcore.recipe.WFCoreRecipeMaps;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
-public class MyMod {
+public class wfcore {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
+    public static final String MODID = "wfcore";
 
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)

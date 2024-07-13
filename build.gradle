@@ -690,7 +690,7 @@ tasks.register('generateAssets') {
             mcmodInfoFile.text = """[{
     "modid": "\${modid}",
     "name": "\${modname}",
-    "description": "An example mod for Minecraft 1.12.2 with Forge",
+    "description": "Coremod for WarFactory",
     "version": "\${version}",
     "mcversion": "\${mcversion}",
     "logoFile": "",
