@@ -518,7 +518,7 @@ configurations {
     testRuntimeClasspath.extendsFrom(runtimeOnlyNonPublishable)
 }
 
-String mixinProviderSpec = 'zone.rong:mixinbooter:9.1'
+String mixinProviderSpec = 'zone.rong:mixinbooter:8.9'
 dependencies {
     if (usesMixins.toBoolean()) {
         annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
@@ -690,7 +690,7 @@ tasks.register('generateAssets') {
             mcmodInfoFile.text = """[{
     "modid": "\${modid}",
     "name": "\${modname}",
-    "description": "An example mod for Minecraft 1.12.2 with Forge",
+    "description": "Coremod for WarFactory",
     "version": "\${version}",
     "mcversion": "\${mcversion}",
     "logoFile": "",
