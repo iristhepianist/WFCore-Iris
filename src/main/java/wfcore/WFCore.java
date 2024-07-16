@@ -14,10 +14,11 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import wfcore.Tags;
+import wfcore.common.metatileentities.multi.electric.WFCoreMetaTileEntities;
+import wfcore.common.recipe.chain.SwordOfTheDesmosChain;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
-public class wfcore {
+public class WFCore {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
     public static final String MODID = "wfcore";
@@ -33,7 +34,7 @@ public class wfcore {
     @SubscribeEvent
     // Register recipes here (Remove if not needed)
     public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-
+        SwordOfTheDesmosChain.init();
     }
 
     @SubscribeEvent
@@ -45,7 +46,7 @@ public class wfcore {
     @SubscribeEvent
     // Register blocks here (Remove if not needed)
     public void registerBlocks(RegistryEvent.Register<Block> event) {
-
+        WFCoreMetaTileEntities.init();
     }
 
     @EventHandler
