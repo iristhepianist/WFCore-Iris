@@ -60,7 +60,7 @@ public class MetaTileEntityProjector extends RecipeMapMultiblockController imple
     private boolean registeredBloomRenderTicket;
 
     protected static final int NO_COLOR = 0;
-    private int fusionRingColor = 0x9163CD;
+    private int fusionRingColor = 0x1D4897;
 
     protected int getFusionRingColor() {
         return this.fusionRingColor;
@@ -72,11 +72,13 @@ public class MetaTileEntityProjector extends RecipeMapMultiblockController imple
 
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("CCCCC")
-                .aisle("CCCCC")
-                .aisle("CCCCC")
-                .aisle("CCCCC")
-                .aisle("CCSCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCCCCC")
+                .aisle("CCCSCCC")
                 .where('S', this.selfPredicate())
                 .where('C', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.STEEL_SOLID)).or(autoAbilities(true, true, true, true, true, true, false)))
                 .build();
