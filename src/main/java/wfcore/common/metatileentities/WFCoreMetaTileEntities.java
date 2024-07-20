@@ -1,8 +1,9 @@
-package wfcore.common.metatileentities.multi.electric;
+package wfcore.common.metatileentities;
 
 
 
 import gregtech.api.GTValues;
+import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
@@ -12,11 +13,13 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.metatileentities.electric.MetaTileEntitySingleTurbine;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch;
 import gregtech.common.metatileentities.storage.MetaTileEntityDrum;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import wfcore.WFCore;
+import wfcore.common.metatileentities.multi.electric.MetaTileEntityProjector;
 
 import java.util.function.Function;
 
@@ -25,11 +28,9 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 public class WFCoreMetaTileEntities {
 
     public static MetaTileEntityProjector PROJECTOR;
-
     public static void init() {
         //Multis
         PROJECTOR = registerMetaTileEntity(10001, new MetaTileEntityProjector(location("projector")));
-
     }
 
     private static ResourceLocation location(String name) {

@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import wfcore.common.metatileentities.multi.electric.WFCoreMetaTileEntities;
+import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 import wfcore.common.recipe.chain.SwordOfTheDesmosChain;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")

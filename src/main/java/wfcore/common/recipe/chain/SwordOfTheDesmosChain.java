@@ -1,8 +1,10 @@
 package wfcore.common.recipe.chain;
 
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+
 
 import static wfcore.api.recipes.WFCoreRecipeMaps.PROJECTOR_RECIPES;
 
@@ -14,5 +16,6 @@ public class SwordOfTheDesmosChain {
                 .duration(10000000)
                 .EUt(32)
                 .buildAndRegister();
+
     }
 }
