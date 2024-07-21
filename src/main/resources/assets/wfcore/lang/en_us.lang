@@ -1,0 +1,6 @@
+#Materials
+gregtech.material.dirt=Dirt
+
+#Multiblocks
+wfcore.machine.projector.name=Projector
+wfcore.machine.projector.tooltip=The physical culmination of your journey has the power to tear the gods apart
