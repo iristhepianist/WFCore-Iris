@@ -1,0 +1,12 @@
+{
+  "package": "wfcore.mixins",
+  "refmap": "mixins.wfcore.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "vanilla.CombatRulesMixin"
+  ],
+  "client": [],
+  "server": []
+}
