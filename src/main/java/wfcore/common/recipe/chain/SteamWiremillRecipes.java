@@ -15,31 +15,31 @@ public class SteamWiremillRecipes {
                 .input(OrePrefix.ingot, Materials.Copper)
                 .outputs(OreDictUnifier.get(wireGtSingle, Materials.Copper, 2))
                 .duration(200)
-                .EUt(32)
+                .EUt(16)
                 .buildAndRegister();
         STEAM_WIREMILL_RECIPES.recipeBuilder()
                 .input(OrePrefix.ingot, Materials.Tin)
                 .outputs(OreDictUnifier.get(wireGtSingle, Materials.Tin, 2))
                 .duration(200)
-                .EUt(32)
+                .EUt(16)
                 .buildAndRegister();
         STEAM_WIREMILL_RECIPES.recipeBuilder()
                 .input(OrePrefix.ingot, Materials.RedAlloy)
                 .outputs(OreDictUnifier.get(wireGtSingle, Materials.RedAlloy, 2))
                 .duration(200)
-                .EUt(32)
+                .EUt(16)
                 .buildAndRegister();
         STEAM_WIREMILL_RECIPES.recipeBuilder()
                 .input(OrePrefix.ingot, Materials.Lead)
                 .outputs(OreDictUnifier.get(wireGtSingle, Materials.Lead, 2))
                 .duration(200)
-                .EUt(32)
+                .EUt(16)
                 .buildAndRegister();
         STEAM_WIREMILL_RECIPES.recipeBuilder()
                 .input(wireGtSingle, Materials.Copper)
                 .outputs(OreDictUnifier.get(wireFine, Materials.Copper, 2))
                 .duration(200)
-                .EUt(32)
+                .EUt(16)
                 .buildAndRegister();
 
             }
