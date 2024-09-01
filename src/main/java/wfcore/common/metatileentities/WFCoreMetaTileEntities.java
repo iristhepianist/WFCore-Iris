@@ -4,7 +4,7 @@ package wfcore.common.metatileentities;
 
 import net.minecraft.util.ResourceLocation;
 import wfcore.WFCore;
-import wfcore.common.metatileentities.multi.electric.MetaTileEntityProjector;
+import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
 
 import static gregtech.common.metatileentities.MetaTileEntities.*;
@@ -17,6 +17,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityLargeSteamWasher LARGESTEAMWASHER;
     public static MetaTileEntityLargeSteamCentrifuge LARGESTEAMCENTRIFUGE;
     public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
+    public static MetaTileEntitySteamWiremill STEAMWIREMILL;
 
 
 
@@ -30,6 +31,7 @@ public class WFCoreMetaTileEntities {
         LARGESTEAMWASHER = registerMetaTileEntity(10004, new MetaTileEntityLargeSteamWasher(location("largesteamwasher")));
         LARGESTEAMCENTRIFUGE = registerMetaTileEntity(10005, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
         LARGESTEAMMIXER = registerMetaTileEntity(10006, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
+        STEAMWIREMILL = registerMetaTileEntity(10007, new MetaTileEntitySteamWiremill(location("steamwiremill")));
 
 
     }

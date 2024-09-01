@@ -11,4 +11,7 @@ public class WFCoreRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> PROJECTOR_RECIPES = new RecipeMap<>("projector", 4, 4, 4, 4, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER); //Temporary Sound
+
+    public static final RecipeMap<SimpleRecipeBuilder> STEAM_WIREMILL_RECIPES = new RecipeMap<>("steamwiremill", 1, 1, 0, 0, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_WIREMILL, ProgressWidget.MoveType.HORIZONTAL);
 }
