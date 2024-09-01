@@ -9,4 +9,7 @@ wfcore.machine.largesteamcompressor.name=Large Steam Compressor
 wfcore.machine.largesteamwasher.name=Large Steam Washer
 wfcore.machine.largesteamcentrifuge.name=Large Steam Centrifuge
 wfcore.machine.largesteammixer.name=Large Steam Mixer
+wfcore.machine.steamwiremill.name=Steam Wiremill
+wfcore.machine.steamwiremill.tooltip=Lrdshittic coding
+recipemap.steamwiremill.name=Steam Wiremill
 
