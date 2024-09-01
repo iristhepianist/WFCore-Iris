@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityRenderer.class)
-public class MixinRenderLivingBase() {
+public class MixinRenderLivingBase {
     @Inject(method = "drawNameplate", at=@At("TAIL"))
     private void DisableDepthBuffer(){
         GlStateManager.disableDepth();
