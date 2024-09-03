@@ -1,6 +1,8 @@
 package wfcore.common.proxy;
 
+import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.metatileentity.registry.MTEManager;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.common.items.MetaItems;
@@ -14,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
+import wfcore.Tags;
 import wfcore.WFCore;
 import wfcore.api.recipes.WFCoreRecipeMaps;
 import wfcore.common.materials.WFCoreMaterials;
@@ -46,6 +49,11 @@ public class CommonProxy {
 
 
 
+    }
+
+    @SubscribeEvent
+    public static void registerMTERegistry(MTEManager.MTERegistryEvent event) {
+        GregTechAPI.mteManager.createRegistry(Tags.MODID);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
