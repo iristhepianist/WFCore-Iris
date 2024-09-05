@@ -5,7 +5,9 @@
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "vanilla.CombatRulesMixin"
+    "vanilla.CombatRulesMixin",
+    "vanilla.RenderNameplateMixin",
+    "vanilla.RenderLivingLabelMixin"
   ],
   "client": [],
   "server": []
