@@ -2,39 +2,43 @@ package wfcore.common.metatileentities;
 
 
 
-import gregtech.api.GTValues;
-import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
-import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
-import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.util.GTUtility;
-import gregtech.client.renderer.ICubeRenderer;
-import gregtech.client.renderer.texture.Textures;
-import gregtech.common.blocks.BlockTurbineCasing;
-import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.metatileentities.electric.MetaTileEntitySingleTurbine;
-import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch;
-import gregtech.common.metatileentities.storage.MetaTileEntityDrum;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import wfcore.WFCore;
-import wfcore.common.metatileentities.multi.electric.MetaTileEntityProjector;
-
-import java.util.function.Function;
+import wfcore.common.metatileentities.multi.electric.*;
+import wfcore.common.metatileentities.multi.steam.*;
 
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 
 public class WFCoreMetaTileEntities {
 
     public static MetaTileEntityProjector PROJECTOR;
+    public static MetaTileEntityLargeSteamForgeHammer LARGESTEAMFORGEHAMMER;
+    public static MetaTileEntityLargeSteamCompressor LARGESTEAMCOMPRESSOR;
+    public static MetaTileEntityLargeSteamWasher LARGESTEAMWASHER;
+    public static MetaTileEntityLargeSteamCentrifuge LARGESTEAMCENTRIFUGE;
+    public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
+    public static MetaTileEntitySteamWiremill STEAMWIREMILL;
+
+
+
+    public static int id = 0;
+
     public static void init() {
         //Multis
-        PROJECTOR = registerMetaTileEntity(10001, new MetaTileEntityProjector(location("projector")));
+        PROJECTOR = registerMetaTileEntity(id++, new MetaTileEntityProjector(location("projector")));
+        LARGESTEAMFORGEHAMMER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamForgeHammer(location("largesteamforgehammer")));
+        LARGESTEAMCOMPRESSOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCompressor(location("largesteamcompressor")));
+        LARGESTEAMWASHER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamWasher(location("largesteamwasher")));
+        LARGESTEAMCENTRIFUGE = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
+        LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
+        STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
+
+
     }
 
-    private static ResourceLocation location(String name) {
-        return new ResourceLocation(WFCore.MODID, name);
+    private static ResourceLocation location(@NotNull String name) {
+        return new ResourceLocation("wfcore", name);
     }
 
     /*public static void registerWFCoreSimpleMetaTileEntity(GCYWSimpleMachineMetaTileEntity[] machines, int startId, int maxTier, String name, RecipeMap<?> map, ICubeRenderer texture, boolean hasFrontFacing,  Function<String, ResourceLocation> resourceId, Function<Integer, Integer> tankScalingFunction) {
