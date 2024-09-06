@@ -5,6 +5,7 @@ package wfcore.common.metatileentities;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import wfcore.WFCore;
+import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
 
@@ -19,6 +20,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityLargeSteamCentrifuge LARGESTEAMCENTRIFUGE;
     public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
+    public static MetaTileEntityBoilerTower BOILERTOWER;
 
 
 
@@ -33,7 +35,7 @@ public class WFCoreMetaTileEntities {
         LARGESTEAMCENTRIFUGE = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
         LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
-
+        BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
 
     }
 
