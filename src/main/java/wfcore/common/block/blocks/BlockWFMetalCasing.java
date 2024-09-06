@@ -1,4 +1,4 @@
-package wfcore.common.blocks;
+package wfcore.common.block.blocks;
 
 import gregtech.api.block.IStateHarvestLevel;
 import gregtech.api.block.VariantBlock;
@@ -31,7 +31,7 @@ public class BlockWFMetalCasing extends VariantBlock<gregtech.common.blocks.Bloc
 
     public enum MetalCasingType implements IStringSerializable, IStateHarvestLevel {
 
-        BRONZE_BRICKS("bronze_bricks", 1);
+        TESTCASING("test_casing", 1);
 
 
         private final String name;

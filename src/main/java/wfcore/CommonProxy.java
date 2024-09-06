@@ -1,4 +1,4 @@
-package wfcore.common.proxy;
+package wfcore;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
@@ -19,11 +19,15 @@ import org.jetbrains.annotations.NotNull;
 import wfcore.Tags;
 import wfcore.WFCore;
 import wfcore.api.recipes.WFCoreRecipeMaps;
+import wfcore.common.block.WFCoreMetaBlocks;
 import wfcore.common.materials.WFCoreMaterials;
 import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 
 import java.util.Objects;
 import java.util.function.Function;
+
+import static wfcore.common.block.WFCoreMetaBlocks.COMPUTERPARTS;
+//import static wfcore.common.block.WFCoreMetaBlocks.WFMETALCASING;
 
 @Mod.EventBusSubscriber(modid = WFCore.MODID)
 public class CommonProxy {
@@ -38,7 +42,9 @@ public class CommonProxy {
     public static void registerBlocks(@NotNull RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        WFCoreMetaTileEntities.init();
+        registry.register(COMPUTERPARTS);
+        // registry.register(WFMETALCASING);
+
 
 
     }
@@ -47,7 +53,7 @@ public class CommonProxy {
     public static void registerItems(@NotNull RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
 
-
+        registry.register(createItemBlock(COMPUTERPARTS, VariantItemBlock::new));
 
     }
 

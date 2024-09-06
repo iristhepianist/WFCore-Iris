@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import wfcore.WFCore;
 import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
 import wfcore.common.metatileentities.multi.electric.*;
+import wfcore.common.metatileentities.multi.electric.computing.MetaTileEntityComputingServer;
 import wfcore.common.metatileentities.multi.steam.*;
 
 import static gregtech.common.metatileentities.MetaTileEntities.*;
@@ -21,7 +22,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
-
+    public static MetaTileEntityComputingServer COMPUTINGSERVER;
 
 
     public static int id = 0;
@@ -36,7 +37,7 @@ public class WFCoreMetaTileEntities {
         LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
-
+        COMPUTINGSERVER = registerMetaTileEntity(id++, new MetaTileEntityComputingServer(location("computingserver")));
     }
 
     private static ResourceLocation location(@NotNull String name) {
