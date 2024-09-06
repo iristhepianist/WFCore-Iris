@@ -12,6 +12,9 @@ wfcore.machine.largesteammixer.name=Large Steam Mixer
 wfcore.machine.steam_wiremill.name=Steam Wiremill
 wfcore.machine.steam_wiremill.tooltip=Lrdshittic coding
 recipemap.steam_wiremill.name=Steam Wiremill
+recipemap.alloy_kiln.name=Alloy Kiln
+wfcore.machine.alloy_kiln.name=Alloy Kiln
+wfcore.machine.large_primitive_blast_furnace.name=Large Primitive Blast Furnace
 
 gregtech.machine.boiler_tower.height=Stack Height: %s §9blocks
 

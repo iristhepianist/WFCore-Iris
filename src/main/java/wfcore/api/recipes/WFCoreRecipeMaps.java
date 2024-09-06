@@ -7,6 +7,7 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMapBuilder;
 import gregtech.api.recipes.builders.ComputationRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
+import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import net.minecraft.init.SoundEvents;
@@ -32,5 +33,15 @@ public class WFCoreRecipeMaps {
             .fluidOutputs(0)
             .progressBar(GuiTextures.PROGRESS_BAR_WIREMILL)
             .build();
+    public static final RecipeMap<PrimitiveRecipeBuilder> ALLOY_KILN_RECIPES = new RecipeMapBuilder<>("alloy_kiln",
+            new PrimitiveRecipeBuilder())
+            .itemInputs(2)
+            .itemOutputs(2)
+            .fluidInputs(0)
+            .fluidOutputs(0)
+            .progressBar(GuiTextures.PROGRESS_BAR_WIREMILL)
+            .build();
+
+
 
 }

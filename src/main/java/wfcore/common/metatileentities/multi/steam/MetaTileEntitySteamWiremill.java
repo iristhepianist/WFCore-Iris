@@ -54,10 +54,10 @@ public class MetaTileEntitySteamWiremill extends RecipeMapSteamMultiblockControl
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
                 .aisle("XXXXXXX", "XXXXXXX", "#######")
-                .aisle("XXXXXXX", "X#BBBBX", "XXXXXXX")
+                .aisle("XXXXXXX", "XBBBBBX", "XXXXXXX")
                 .aisle("XXXXXXX", "XSXGGGX", "#######")
                 .where('S', selfPredicate())
-                .where('X', states(getCasingState()).setMinGlobalLimited(14).or(autoAbilities()))
+                .where('X', states(getCasingState()).setMinGlobalLimited(37).or(autoAbilities()))
                 .where('#', air())
                 .where('G', blocks(Blocks.GLASS))
                 .where('B', states(MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.BRONZE_GEARBOX)))

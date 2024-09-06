@@ -4,8 +4,9 @@ package wfcore.common.metatileentities;
 
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import wfcore.WFCore;
+import wfcore.common.metatileentities.multi.MetaTileEntityAlloyKiln;
 import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
+import wfcore.common.metatileentities.multi.MetaTileEntityLargePrimitiveBlastFurnace;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.electric.computing.MetaTileEntityComputingServer;
 import wfcore.common.metatileentities.multi.steam.*;
@@ -23,7 +24,8 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
     public static MetaTileEntityComputingServer COMPUTINGSERVER;
-
+    public static MetaTileEntityLargePrimitiveBlastFurnace LARGE_PRIMITIVE_BLAST_FURNACE;
+    public static MetaTileEntityAlloyKiln ALLOY_KILN;
 
     public static int id = 0;
 
@@ -38,6 +40,8 @@ public class WFCoreMetaTileEntities {
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
         COMPUTINGSERVER = registerMetaTileEntity(id++, new MetaTileEntityComputingServer(location("computingserver")));
+        LARGE_PRIMITIVE_BLAST_FURNACE = registerMetaTileEntity(id++, new MetaTileEntityLargePrimitiveBlastFurnace(location("large_primitive_blast_furnace")));
+        ALLOY_KILN = registerMetaTileEntity(id++, new MetaTileEntityAlloyKiln(location("alloy_kiln")));
     }
 
     private static ResourceLocation location(@NotNull String name) {
