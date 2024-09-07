@@ -4,14 +4,15 @@ package wfcore.common.metatileentities.multi.electric.computing;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
-import gregtech.api.capability.*;
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.IOpticalComputationProvider;
 import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.gui.GuiTextures;
-import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.Widget;
 import gregtech.api.gui.resources.TextureArea;
-import gregtech.api.gui.widgets.*;
+import gregtech.api.gui.widgets.ClickButtonWidget;
+import gregtech.api.gui.widgets.WidgetGroup;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -29,8 +30,6 @@ import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.core.sound.GTSoundEvents;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.EnumFacing;
 import wfcore.api.blocks.impl.WrappedIntTired;
 import wfcore.api.predicate.TiredTraceabilityPredicate;
 import wfcore.api.utils.GTQTUtil;
@@ -52,8 +51,6 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
-import java.util.function.BooleanSupplier;
 
 import static gregtech.api.unification.material.Materials.PCBCoolant;
 import static gregtech.api.unification.material.Materials.Water;
@@ -90,10 +87,10 @@ public class MetaTileEntityComputingServer extends MultiblockWithDisplayBase imp
         WidgetGroup group = new WidgetGroup(x, y, width, height);
         group.addWidget(new ClickButtonWidget(0, 0, 9, 18, "", this::decrementThreshold)
                 .setButtonTexture(GuiTextures.BUTTON_THROTTLE_MINUS)
-                .setTooltipText("wfcore.multiblock.computingserver.threshold_decrement"));
+                .setTooltipText("gtqtcore.multiblock.kqcc.threshold_decrement"));
         group.addWidget(new ClickButtonWidget(9, 0, 9, 18, "", this::incrementThreshold)
                 .setButtonTexture(GuiTextures.BUTTON_THROTTLE_PLUS)
-                .setTooltipText("wfcore.multiblock.computingserver.threshold_increment"));
+                .setTooltipText("gtqtcore.multiblock.kqcc.threshold_increment"));
         return group;
     }
     private void incrementThreshold(Widget.ClickData clickData) {
@@ -250,18 +247,18 @@ public class MetaTileEntityComputingServer extends MultiblockWithDisplayBase imp
     }
     @Override
     public String[] getDescription() {
-        return new String[]{I18n.format("wfcore.multiblock.computingserver.description")};
+        return new String[]{I18n.format("gtqtcore.multiblock.computing_server.description")};
     }
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
-        textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.eu", CWTT()*30,HOT));
-        textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.start", thresholdPercentage));
+        textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.eu", CWTT()*30,HOT));
+        textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.start", thresholdPercentage));
 
         if((RAM1+RAM2+RAM3+RAM4)>=(GPU1+GPU2+GPU3+GPU4)&&(RAM1+RAM2+RAM3+RAM4)>=(CPU1+CPU2+CPU3+CPU4))
-            textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.normal"));
+            textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.normal"));
         else
-            textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.lack"));
+            textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.lack"));
 
         if (coolantHandler != null) {
             FluidStack STACKA = coolantHandler.drain(Water.getFluid(Integer.MAX_VALUE), false);
@@ -272,16 +269,14 @@ public class MetaTileEntityComputingServer extends MultiblockWithDisplayBase imp
 
             //FluidStack STACKC = coolantHandler.drain(LiquidNitrogen.getFluid(Integer.MAX_VALUE), false);
             //int liquidNITAmount = STACKC == null ? 0 : STACKC.amount;
-            textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.water.amount", TextFormattingUtil.formatNumbers((liquidWaterAmount)),TextFormattingUtil.formatNumbers((liquidPCBAmount))
-             //       ,TextFormattingUtil.formatNumbers((liquidNITAmount))
-            ));
+            //textList.add(new TextComponentTranslation("gtqtcore.multiblock.kqcc.water.amount", TextFormattingUtil.formatNumbers((liquidWaterAmount)),TextFormattingUtil.formatNumbers((liquidPCBAmount)),TextFormattingUtil.formatNumbers((liquidNITAmount))));
         }
-        textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.gpu", GPU1,GPU2,GPU3,GPU4));
-        textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.cpu", CPU1,CPU2,CPU3,CPU4));
-        textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.ram", RAM1,RAM2,RAM3,RAM4));
-        if(thresholdPercentage==0) textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.cwtt", returncwt(),0));
-        if(thresholdPercentage==1) textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.cwtt", returncwt(),HEAT()));
-        if(thresholdPercentage==2) textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.cwtt", returncwt(),HEAT()*4));
+        textList.add(new TextComponentTranslation("gregtech.multiblock.computer_parts.gpu", GPU1,GPU2,GPU3,GPU4));
+        textList.add(new TextComponentTranslation("gregtech.multiblock.computer_parts.cpu", CPU1,CPU2,CPU3,CPU4));
+        textList.add(new TextComponentTranslation("gregtech.multiblock.computer_parts.ram", RAM1,RAM2,RAM3,RAM4));
+        if(thresholdPercentage==0) textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.cwtt", returncwt(),0));
+        if(thresholdPercentage==1) textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.cwtt", returncwt(),HEAT()));
+        if(thresholdPercentage==2) textList.add(new TextComponentTranslation("gregtech.multiblock.kqcc.cwtt", returncwt(),HEAT()*4));
     }
 
     int CWTT()
@@ -309,7 +304,7 @@ public class MetaTileEntityComputingServer extends MultiblockWithDisplayBase imp
         super.addWarningText(textList);
         if (isStructureFormed()) {
             if (HOT>=30000) {
-                textList.add(new TextComponentTranslation("wfcore.multiblock.computingserver.hot"));
+                textList.add(new TextComponentTranslation("gtqtcore.multiblock.kqcc.hot"));
             }
         }
     }
@@ -461,108 +456,5 @@ public class MetaTileEntityComputingServer extends MultiblockWithDisplayBase imp
                     "gregtech.multiblock.hpca.temperature",
                     tempInfo));
         }
-    }
-
-    @Override
-    protected ModularUI.Builder createUITemplate(EntityPlayer entityPlayer) {
-        ModularUI.Builder builder;
-        label38: {
-            builder = ModularUI.builder(GuiTextures.BACKGROUND, 198, 258);
-            if (this instanceof IProgressBarMultiblock) {
-                IProgressBarMultiblock progressMulti = (IProgressBarMultiblock)this;
-                if (progressMulti.showProgressBar()) {
-                    builder.image(4, 4, 190, 149, GuiTextures.DISPLAY);
-                    ProgressWidget progressBar;
-                    if (progressMulti.getNumProgressBars() == 3) {
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(0);
-                        }, 4, 135, 62, 7, progressMulti.getProgressBarTexture(0), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 0);
-                        });
-                        builder.widget(progressBar);
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(1);
-                        }, 68, 135, 62, 7, progressMulti.getProgressBarTexture(1), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 1);
-                        });
-                        builder.widget(progressBar);
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(2);
-                        }, 132, 155, 62, 7, progressMulti.getProgressBarTexture(2), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 2);
-                        });
-                        builder.widget(progressBar);
-                    } else if (progressMulti.getNumProgressBars() == 2) {
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(0);
-                        }, 4, 155, 94, 7, progressMulti.getProgressBarTexture(0), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 0);
-                        });
-                        builder.widget(progressBar);
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(1);
-                        }, 100, 155, 94, 7, progressMulti.getProgressBarTexture(1), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 1);
-                        });
-                        builder.widget(progressBar);
-                    } else {
-                        progressBar = (new ProgressWidget(() -> {
-                            return progressMulti.getFillPercentage(0);
-                        }, 4, 115, 190, 7, progressMulti.getProgressBarTexture(0), ProgressWidget.MoveType.HORIZONTAL)).setHoverTextConsumer((list) -> {
-                            progressMulti.addBarHoverText(list, 0);
-                        });
-                        builder.widget(progressBar);
-                    }
-
-                    builder.widget((new IndicatorImageWidget(174, 93, 17, 17, this.getLogo())).setWarningStatus(this.getWarningLogo(), this::addWarningText).setErrorStatus(this.getErrorLogo(), this::addErrorText));
-                    break label38;
-                }
-            }
-
-            builder.image(4, 4, 190, 117, GuiTextures.DISPLAY);
-            builder.widget((new IndicatorImageWidget(174, 101, 17, 17, this.getLogo())).setWarningStatus(this.getWarningLogo(), this::addWarningText).setErrorStatus(this.getErrorLogo(), this::addErrorText));
-        }
-
-        builder.label(9, 9, this.getMetaFullName(), 16777215);
-        builder.widget((new AdvancedTextWidget(9, 20, this::addDisplayText, 16777215)).setMaxWidthLimit(181).setClickHandler(this::handleDisplayClick));
-        IControllable controllable = (IControllable)this.getCapability(GregtechTileCapabilities.CAPABILITY_CONTROLLABLE, (EnumFacing)null);
-        TextureArea var10007;
-        BooleanSupplier var10008;
-        if (controllable != null) {
-            var10007 = GuiTextures.BUTTON_POWER;
-            Objects.requireNonNull(controllable);
-            var10008 = controllable::isWorkingEnabled;
-            Objects.requireNonNull(controllable);
-            builder.widget(new ImageCycleButtonWidget(173, 183, 18, 18, var10007, var10008, controllable::setWorkingEnabled));
-            builder.widget(new ImageWidget(173, 221, 18, 6, GuiTextures.BUTTON_POWER_DETAIL));
-        }
-
-        if (this.shouldShowVoidingModeButton()) {
-            builder.widget((new ImageCycleButtonWidget(173, 161, 18, 18, GuiTextures.BUTTON_VOID_MULTIBLOCK, 4, this::getVoidingMode, this::setVoidingMode)).setTooltipHoverString(MultiblockWithDisplayBase::getVoidingModeTooltip));
-        } else {
-            builder.widget((new ImageWidget(173, 201, 18, 18, GuiTextures.BUTTON_VOID_NONE)).setTooltip("gregtech.gui.multiblock_voiding_not_supported"));
-        }
-
-        label30: {
-            if (this instanceof IDistinctBusController) {
-                IDistinctBusController distinct = (IDistinctBusController)this;
-                if (distinct.canBeDistinct()) {
-                    var10007 = GuiTextures.BUTTON_DISTINCT_BUSES;
-                    Objects.requireNonNull(distinct);
-                    var10008 = distinct::isDistinct;
-                    Objects.requireNonNull(distinct);
-                    builder.widget((new ImageCycleButtonWidget(173, 223, 18, 18, var10007, var10008, distinct::setDistinct)).setTooltipHoverString((i) -> {
-                        return "gregtech.multiblock.universal.distinct_" + (i == 0 ? "disabled" : "enabled");
-                    }));
-                    break label30;
-                }
-            }
-
-            builder.widget((new ImageWidget(173, 183, 18, 18, GuiTextures.BUTTON_NO_DISTINCT_BUSES)).setTooltip("gregtech.multiblock.universal.distinct_not_supported"));
-        }
-
-        builder.widget(this.getFlexButton(173, 165, 18, 18));
-        builder.bindPlayerInventory(entityPlayer.inventory, 165);
-        return builder;
     }
 }
