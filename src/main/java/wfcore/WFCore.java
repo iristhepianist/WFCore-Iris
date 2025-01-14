@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import wfcore.common.materials.WFCoreMaterials;
 import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 import wfcore.common.proxy.CommonProxy;
+import wfcore.common.recipe.chain.CircuitFabricatorRecipes;
 import wfcore.common.recipe.chain.SteamWiremillRecipes;
 import wfcore.common.recipe.chain.SwordOfTheDesmosChain;
 
@@ -49,6 +50,7 @@ public class WFCore {
     public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         SwordOfTheDesmosChain.init();
         SteamWiremillRecipes.init();
+        CircuitFabricatorRecipes.init();
     }
 
     @SubscribeEvent

@@ -1,6 +1,5 @@
 package wfcore.common.metatileentities.multi.steam;
 
-import gregtech.api.GTValues;
 import gregtech.api.capability.impl.NotifiableItemStackHandler;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
@@ -8,26 +7,22 @@ import gregtech.api.gui.widgets.ProgressWidget.MoveType;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.SteamMetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
-import gregtech.api.recipes.RecipeMaps;
-import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.texture.Textures;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
+import wfcore.api.recipes.WFCoreRecipeMaps;
 
-public class SteamCircuitFabricator extends SteamMetaTileEntity {
+public class SteamPCBFactory extends SteamMetaTileEntity {
 
-    public SteamCircuitFabricator(ResourceLocation metaTileEntityId, boolean isHighPressure) {
-        super(metaTileEntityId, RecipeMaps.ALLOY_SMELTER_RECIPES, Textures.ALLOY_SMELTER_OVERLAY, isHighPressure);
+    public SteamPCBFactory(ResourceLocation metaTileEntityId, boolean isHighPressure) {
+        super(metaTileEntityId, WFCoreRecipeMaps.Steam_PCB_Factory_Recipes, Textures.SIFTER_OVERLAY, isHighPressure);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new SteamCircuitFabricator(metaTileEntityId, isHighPressure);
+        return new SteamPCBFactory(metaTileEntityId, isHighPressure);
     }
 
     @Override
@@ -58,13 +53,7 @@ public class SteamCircuitFabricator extends SteamMetaTileEntity {
                 .slot(this.exportItems, 0, 107, 25, true, false, GuiTextures.SLOT_STEAM.get(isHighPressure))
                 .build(getHolder(), player);
     }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void randomDisplayTick() {
-        super.randomDisplayTick();
-        if (isActive() && GTValues.RNG.nextBoolean()) {
-            VanillaParticleEffects.defaultFrontEffect(this, 0.5F, EnumParticleTypes.SMOKE_NORMAL);
-        }
-    }
 }
+
+
+

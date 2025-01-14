@@ -32,5 +32,13 @@ public class WFCoreRecipeMaps {
             .fluidOutputs(0)
             .progressBar(GuiTextures.PROGRESS_BAR_WIREMILL)
             .build();
+    public static final RecipeMap<SimpleRecipeBuilder> Steam_PCB_Factory_Recipes = new RecipeMapBuilder<>("steam_pcb_factory",
+            new SimpleRecipeBuilder())
+            .itemInputs(6)
+            .itemOutputs(1)
+            .fluidInputs(0)
+            .fluidOutputs(0)
+            .progressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE)
+            .build();
 
 }

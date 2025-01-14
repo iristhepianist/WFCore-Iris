@@ -2,10 +2,10 @@ package wfcore.common.metatileentities;
 
 
 
-import gregtech.api.util.GTLog;
+
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import wfcore.WFCore;
+import gregtech.api.util.GTLog;
 import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
@@ -23,7 +23,8 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
-    public static SteamCircuitFabricator STEAM_CIRCUIT_FABRICATOR_STEEL;
+    public static MetaTileEntityLargeSteamCircuitFabricator LARGESTEAMCIRCUITFABRICATOR;
+    public static SteamPCBFactory STEAM_PCB_FACTORY_STEEL;
 
 
 
@@ -33,6 +34,7 @@ public class WFCoreMetaTileEntities {
         //Multis
         PROJECTOR = registerMetaTileEntity(id++, new MetaTileEntityProjector(location("projector")));
         LARGESTEAMFORGEHAMMER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamForgeHammer(location("largesteamforgehammer")));
+        LARGESTEAMCIRCUITFABRICATOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCircuitFabricator(location("largesteamcircuitfabricator")));
         LARGESTEAMCOMPRESSOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCompressor(location("largesteamcompressor")));
         LARGESTEAMWASHER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamWasher(location("largesteamwasher")));
         LARGESTEAMCENTRIFUGE = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
@@ -40,8 +42,8 @@ public class WFCoreMetaTileEntities {
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
         GTLog.logger.info("Who the fuck reads these lmaoooo");
-        STEAM_CIRCUIT_FABRICATOR_STEEL = registerMetaTileEntity(18,
-                new SteamCircuitFabricator(gregtechId("steam_circuit_fabricator"), true));
+        STEAM_PCB_FACTORY_STEEL = registerMetaTileEntity(16000,
+                new SteamPCBFactory(gregtechId("steam_pcb_factory"), true));
     }
 
 

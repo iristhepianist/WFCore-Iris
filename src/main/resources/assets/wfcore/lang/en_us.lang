@@ -12,5 +12,8 @@ wfcore.machine.largesteammixer.name=Large Steam Mixer
 wfcore.machine.steam_wiremill.name=Steam Wiremill
 wfcore.machine.steam_wiremill.tooltip=Lrdshittic coding
 recipemap.steam_wiremill.name=Steam Wiremill
+gregtech.machine.steam_pcb_factory.name=Steam PCB Factory
+recipemap.steam_pcb_factory.name=Steam PCB Factory
+
 
 gregtech.machine.boiler_tower.height=Stack Height: %s §9blocks
