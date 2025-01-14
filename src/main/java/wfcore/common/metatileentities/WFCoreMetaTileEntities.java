@@ -2,6 +2,7 @@ package wfcore.common.metatileentities;
 
 
 
+import gregtech.api.util.GTLog;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import wfcore.WFCore;
@@ -9,6 +10,7 @@ import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
 
+import static gregtech.api.util.GTUtility.gregtechId;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 
 public class WFCoreMetaTileEntities {
@@ -21,6 +23,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
+    public static SteamCircuitFabricator STEAM_CIRCUIT_FABRICATOR_STEEL;
 
 
 
@@ -36,8 +39,11 @@ public class WFCoreMetaTileEntities {
         LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
-
+        GTLog.logger.info("Who the fuck reads these lmaoooo");
+        STEAM_CIRCUIT_FABRICATOR_STEEL = registerMetaTileEntity(18,
+                new SteamCircuitFabricator(gregtechId("steam_circuit_fabricator"), true));
     }
+
 
     private static ResourceLocation location(@NotNull String name) {
         return new ResourceLocation("wfcore", name);
