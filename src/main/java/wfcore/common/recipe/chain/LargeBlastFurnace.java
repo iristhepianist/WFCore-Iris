@@ -4,18 +4,19 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 
-
+import static gregtech.api.unification.ore.OrePrefix.ingot;
 import static gregtech.api.unification.ore.OrePrefix.wireGtSingle;
+import static wfcore.api.recipes.WFCoreRecipeMaps.Large_Blast_Furnace;
 import static wfcore.api.recipes.WFCoreRecipeMaps.Steam_PCB_Factory_Recipes;
 
 
-public class CircuitFabricatorRecipes {
+public class LargeBlastFurnace {
     public static void init() {
-        Steam_PCB_Factory_Recipes.recipeBuilder()
-                .input(OrePrefix.ingot, Materials.Copper)
-                .outputs(OreDictUnifier.get(wireGtSingle, Materials.Copper, 2))
+        Large_Blast_Furnace.recipeBuilder()
+                .input(OrePrefix.gem, Materials.Coal, 2)
+                .input(OrePrefix.ingot, Materials.Iron)
+                .fluidOutputs(Materials.Steel.getFluid(144))
                 .duration(200)
-                .EUt(64)
                 .buildAndRegister();
             }
 }

@@ -3,6 +3,7 @@ package wfcore.common.metatileentities;
 
 
 
+import wfcore.common.metatileentities.multi.primitive.MetaTileEntityWarfactoryBlastFurnace;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import gregtech.api.util.GTLog;
@@ -25,6 +26,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityBoilerTower BOILERTOWER;
     public static MetaTileEntityLargeSteamCircuitFabricator LARGESTEAMCIRCUITFABRICATOR;
     public static SteamPCBFactory STEAM_PCB_FACTORY_STEEL;
+    public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
 
 
 
@@ -41,6 +43,7 @@ public class WFCoreMetaTileEntities {
         LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
         STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
+        LARGEBLASTFURNACE = registerMetaTileEntity(id++, new MetaTileEntityWarfactoryBlastFurnace(location("largeblastfurnace")));
         GTLog.logger.info("Who the fuck reads these lmaoooo");
         STEAM_PCB_FACTORY_STEEL = registerMetaTileEntity(16000,
                 new SteamPCBFactory(gregtechId("steam_pcb_factory"), true));

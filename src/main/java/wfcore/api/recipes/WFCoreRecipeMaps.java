@@ -7,6 +7,7 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMapBuilder;
 import gregtech.api.recipes.builders.ComputationRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
+import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import net.minecraft.init.SoundEvents;
@@ -39,6 +40,14 @@ public class WFCoreRecipeMaps {
             .fluidInputs(0)
             .fluidOutputs(0)
             .progressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE)
+            .build();
+    public static final RecipeMap<PrimitiveRecipeBuilder> Large_Blast_Furnace = new RecipeMapBuilder<>("large_blast_furnace",
+            new PrimitiveRecipeBuilder())
+            .itemInputs(2)
+            .itemOutputs(0)
+            .fluidInputs(0)
+            .fluidOutputs(1)
+            .progressBar(GuiTextures.PROGRESS_BAR_ARROW)
             .build();
 
 }
