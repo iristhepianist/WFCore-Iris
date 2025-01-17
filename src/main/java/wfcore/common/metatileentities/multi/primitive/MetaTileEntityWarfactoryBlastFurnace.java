@@ -72,12 +72,15 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("##XXX##", "##XXX##", "##XXX##", "#######", "#######", "#######", "#######")
-                .aisle("XXXXXXX", "XX&&&XX", "#XX#XX#", "##XXX##", "###X###", "###X###", "##XXX##")
-                .aisle("XXXXXXX", "X&&&&&X", "XX###XX", "##X#X##", "##X#X##", "##X#X##", "##X#X##")
-                .aisle("XXXXXXX", "XX&&&XX", "#XX#XX#", "##XXX##", "###X###", "###X###", "##XXX##")
-                .aisle("##XXX##", "##XYX##", "##XXX##", "#######", "#######", "#######", "#######")
-                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS)).or(abilities(MultiblockAbility.IMPORT_ITEMS)).or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
+                .aisle("#XXX#", "#XXX#", "#XXX#", "#####", "#####", "#####", "#####")
+                .aisle("XXXXX", "X&&&X", "XX#XX", "#XXX#", "##X##", "##X##", "#XXX#")
+                .aisle("XXXXX", "X&&&X", "X###X", "#X#X#", "#X#X#", "#X#X#", "#X#X#")
+                .aisle("XXXXX", "X&&&X", "XX#XX", "#XXX#", "##X##", "##X##", "#XXX#")
+                .aisle("#XXX#", "#XYX#", "#XXX#", "#####", "#####", "#####", "#####")
+                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS))
+                    .or(abilities(MultiblockAbility.IMPORT_ITEMS))
+                    .or(abilities(MultiblockAbility.EXPORT_ITEMS))
+                    .or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
                                                       // running
@@ -169,4 +172,15 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
             }
         }
     }
+
+    @Override
+    protected ModularUI createUI(EntityPlayer entityPlayer) {
+        return null;
+    }
+
+    @Override
+    protected boolean openGUIOnRightClick() {
+        return false;
+    }
+
 }

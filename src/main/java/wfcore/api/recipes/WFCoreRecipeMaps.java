@@ -44,10 +44,9 @@ public class WFCoreRecipeMaps {
     public static final RecipeMap<PrimitiveRecipeBuilder> Large_Blast_Furnace = new RecipeMapBuilder<>("large_blast_furnace",
             new PrimitiveRecipeBuilder())
             .itemInputs(2)
-            .itemOutputs(0)
+            .itemOutputs(1)
             .fluidInputs(0)
             .fluidOutputs(1)
             .progressBar(GuiTextures.PROGRESS_BAR_ARROW)
             .build();
-
 }
