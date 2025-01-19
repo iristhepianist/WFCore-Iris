@@ -1,6 +1,7 @@
 package wfcore.common.metatileentities.multi.primitive;
 
 import gregtech.api.GTValues;
+import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.capability.impl.FluidTankList;
 import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.capability.impl.SteamMultiWorkable;
@@ -10,6 +11,7 @@ import gregtech.api.gui.widgets.LabelWidget;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.gui.widgets.RecipeProgressWidget;
 import gregtech.api.gui.widgets.SlotWidget;
+import gregtech.api.items.itemhandlers.GTItemStackHandler;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -54,11 +56,19 @@ import codechicken.lib.vec.Matrix4;
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.spongepowered.include.com.google.common.collect.Lists;
 import wfcore.api.recipes.WFCoreRecipeMaps;
 
 import java.util.List;
 
 public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMultiblockController {
+
+    private void resetTileAbilities() {
+        this.inputInventory = new GTItemStackHandler(this, 0);
+        this.inputFluidInventory = new FluidTankList(true);
+        this.outputInventory = new GTItemStackHandler(this, 0);
+        this.outputFluidInventory = new FluidTankList(true);
+    }
 
     private static final TraceabilityPredicate SNOW_PREDICATE = new TraceabilityPredicate(
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
