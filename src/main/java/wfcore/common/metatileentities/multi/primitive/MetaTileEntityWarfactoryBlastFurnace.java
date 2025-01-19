@@ -78,9 +78,9 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
     }
     @Override
     protected void initializeAbilities() {
-        this.importItems = new ItemHandlerList(getAbilities((MultiblockAbility.IMPORT_ITEMS)));
-        this.exportItems = new ItemHandlerList(getAbilities((MultiblockAbility.EXPORT_ITEMS)));
-//        this.exportFluids = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        this.inputInventory = new ItemHandlerList(getAbilities((MultiblockAbility.IMPORT_ITEMS)));
+        this.outputInventory = new ItemHandlerList(getAbilities((MultiblockAbility.EXPORT_ITEMS)));
+        this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
     }
     @Override
     protected void formStructure(PatternMatchContext context) {
@@ -103,8 +103,8 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
                 .aisle("#XXX#", "#XYX#", "#XXX#", "#####", "#####", "#####", "#####")
                 .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS))
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS))
-                        .or(abilities(MultiblockAbility.EXPORT_ITEMS)))
-//                        .or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
+                        .or(abilities(MultiblockAbility.EXPORT_ITEMS))
+                        .or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
                                                       // running

@@ -46,7 +46,7 @@ public class WFCoreRecipeMaps {
             .itemInputs(2)
             .itemOutputs(1)
             .fluidInputs(0)
-            .fluidOutputs(0)
+            .fluidOutputs(1)
             .progressBar(GuiTextures.PROGRESS_BAR_ARROW)
             .build();
 }

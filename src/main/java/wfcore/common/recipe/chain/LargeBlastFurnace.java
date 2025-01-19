@@ -11,7 +11,7 @@ public class LargeBlastFurnace {
         Large_Blast_Furnace.recipeBuilder()
                 .input(OrePrefix.gem, Materials.Coal, 2)
                 .input(OrePrefix.ingot, Materials.Iron)
-                .outputs(OreDictUnifier.get(ingot, Materials.Europium))
+                .fluidOutputs(Materials.Steel.getFluid(144))
                 .duration(200)
                 .buildAndRegister();
     }
