@@ -1,6 +1,9 @@
 package wfcore.common.metatileentities.multi.primitive;
 
 import gregtech.api.GTValues;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
+import gregtech.api.capability.impl.SteamMultiWorkable;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.LabelWidget;
@@ -14,6 +17,7 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapPrimitiveMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
@@ -62,7 +66,17 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
     public MetaTileEntityWarfactoryBlastFurnace(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, WFCoreRecipeMaps.Large_Blast_Furnace);
     }
-
+    @Override
+    protected void initializeAbilities() {
+        this.importItems = new ItemHandlerList(getAbilities((MultiblockAbility.IMPORT_ITEMS)));
+        this.exportItems = new ItemHandlerList(getAbilities((MultiblockAbility.EXPORT_ITEMS)));
+//        this.exportFluids = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+    }
+    @Override
+    protected void formStructure(PatternMatchContext context) {
+        super.formStructure(context);
+        this.initializeAbilities();
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityWarfactoryBlastFurnace(metaTileEntityId);
@@ -78,9 +92,9 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
                 .aisle("XXXXX", "X&&&X", "XX#XX", "#XXX#", "##X##", "##X##", "#XXX#")
                 .aisle("#XXX#", "#XYX#", "#XXX#", "#####", "#####", "#####", "#####")
                 .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS))
-                    .or(abilities(MultiblockAbility.IMPORT_ITEMS))
-                    .or(abilities(MultiblockAbility.EXPORT_ITEMS))
-                    .or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
+                        .or(abilities(MultiblockAbility.IMPORT_ITEMS))
+                        .or(abilities(MultiblockAbility.EXPORT_ITEMS)))
+//                        .or(abilities(MultiblockAbility.EXPORT_FLUIDS)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
                                                       // running
