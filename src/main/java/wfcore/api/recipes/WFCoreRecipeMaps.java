@@ -49,4 +49,12 @@ public class WFCoreRecipeMaps {
             .fluidOutputs(1)
             .progressBar(GuiTextures.PROGRESS_BAR_ARROW)
             .build();
+    public static final RecipeMap<PrimitiveRecipeBuilder> StrandCaster = new RecipeMapBuilder<>("strand_caster",
+            new PrimitiveRecipeBuilder())
+            .itemInputs(2)
+            .itemOutputs(1)
+            .fluidInputs(1)
+            .fluidOutputs(1)
+            .progressBar(GuiTextures.PROGRESS_BAR_ARROW)
+            .build();
 }

@@ -3,6 +3,7 @@ package wfcore.common.metatileentities;
 
 
 
+import wfcore.common.metatileentities.multi.primitive.MetaTileEntityStrandCaster;
 import wfcore.common.metatileentities.multi.primitive.MetaTileEntityWarfactoryBlastFurnace;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -17,14 +18,8 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 public class WFCoreMetaTileEntities {
 
     public static MetaTileEntityProjector PROJECTOR;
-    public static MetaTileEntityLargeSteamForgeHammer LARGESTEAMFORGEHAMMER;
-    public static MetaTileEntityLargeSteamCompressor LARGESTEAMCOMPRESSOR;
-    public static MetaTileEntityLargeSteamWasher LARGESTEAMWASHER;
-    public static MetaTileEntityLargeSteamCentrifuge LARGESTEAMCENTRIFUGE;
-    public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
-    public static MetaTileEntityLargeSteamCircuitFabricator LARGESTEAMCIRCUITFABRICATOR;
     public static SteamPCBFactory STEAM_PCB_FACTORY_STEEL;
     public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
     public static MetaTileEntityStrandCaster STRANDCASTER;
@@ -36,13 +31,6 @@ public class WFCoreMetaTileEntities {
     public static void init() {
         //Multis
         PROJECTOR = registerMetaTileEntity(id++, new MetaTileEntityProjector(location("projector")));
-        LARGESTEAMFORGEHAMMER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamForgeHammer(location("largesteamforgehammer")));
-        LARGESTEAMCIRCUITFABRICATOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCircuitFabricator(location("largesteamcircuitfabricator")));
-        LARGESTEAMCOMPRESSOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCompressor(location("largesteamcompressor")));
-        LARGESTEAMWASHER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamWasher(location("largesteamwasher")));
-        LARGESTEAMCENTRIFUGE = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
-        LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
-        STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
         LARGEBLASTFURNACE = registerMetaTileEntity(id++, new MetaTileEntityWarfactoryBlastFurnace(location("largeblastfurnace")));
         STRANDCASTER = registerMetaTileEntity(id++, new MetaTileEntityStrandCaster(location("strandcaster")));

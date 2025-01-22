@@ -22,10 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import wfcore.common.materials.WFCoreMaterials;
 import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 import wfcore.common.proxy.CommonProxy;
-import wfcore.common.recipe.chain.CircuitFabricatorRecipes;
-import wfcore.common.recipe.chain.LargeBlastFurnace;
-import wfcore.common.recipe.chain.SteamWiremillRecipes;
-import wfcore.common.recipe.chain.SwordOfTheDesmosChain;
+import wfcore.common.recipe.chain.*;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
 public class WFCore {
@@ -53,6 +50,7 @@ public class WFCore {
         SteamWiremillRecipes.init();
         CircuitFabricatorRecipes.init();
         LargeBlastFurnace.init();
+        StrandCaster.init();
     }
 
     @SubscribeEvent

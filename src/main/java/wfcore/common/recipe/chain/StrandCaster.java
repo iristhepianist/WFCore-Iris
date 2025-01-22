@@ -1,6 +1,6 @@
 package wfcore.common.recipe.chain;
 
-public class LargeBlastFurnace {
+public class StrandCaster {
     public static void init() {
 
         }
