@@ -1,6 +1,8 @@
 package wfcore.common.materials;
 
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.FluidPipeProperties;
+import gregtech.api.unification.material.properties.PropertyKey;
 
 import static gregtech.api.GTValues.MV;
 import static gregtech.api.GTValues.V;
@@ -13,6 +15,7 @@ public class FirstDegreeMaterials {
                 .color(0x732602)
                 .cableProperties(0, 0, 0, true)
                 .build();
+        Brick.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(2200, 20, false, false, false, false));
     }
     /*
     *public static final Material Dirt = new Material.Builder(10001, gregtechId("dirt"))
