@@ -44,5 +44,6 @@ public class WFCoreMaterials {
 
     }
     public static Material Dirt;
+    public static Material AdvancedAlloy;
 
 }

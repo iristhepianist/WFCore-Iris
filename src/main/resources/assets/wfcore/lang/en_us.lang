@@ -19,6 +19,7 @@ wfcore.machine.strandcaster.tooltip=Made by §6§kXXX§r§6Lrd§r§bmtns§kXXX§
 recipemap.steam_wiremill.name=Steam Wiremill
 gregtech.machine.steam_pcb_factory.name=Steam PCB Factory
 recipemap.steam_pcb_factory.name=Steam PCB Factory
+gregtech.material.advanced_alloy=Advanced Alloy
 
 
 gregtech.machine.boiler_tower.height=Stack Height: %s §9blocks
