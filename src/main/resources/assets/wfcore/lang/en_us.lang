@@ -20,6 +20,11 @@ recipemap.steam_wiremill.name=Steam Wiremill
 gregtech.machine.steam_pcb_factory.name=Steam PCB Factory
 recipemap.steam_pcb_factory.name=Steam PCB Factory
 gregtech.material.advanced_alloy=Advanced Alloy
-
+gregtech.material.workers_alloy=Desh
+gregtech.material.unobtainium=Unobtainium
+gregtech.material.unobtainium.tooltip=Atm referance:interrobang:
+gregtech.material.c_m_b_steel=CMB Steel
+gregtech.material.schrabidium=Schrabidium
+gregtech.material.australium=Australium
 
 gregtech.machine.boiler_tower.height=Stack Height: %s §9blocks
