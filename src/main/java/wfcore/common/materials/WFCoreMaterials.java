@@ -50,5 +50,7 @@ public class WFCoreMaterials {
     public static Material Schrabidium;
     public static Material Unobtainium;
     public static Material CMBSteel;
+    public static Material Neoveline;
+    public static Material Verticium;
 
 }

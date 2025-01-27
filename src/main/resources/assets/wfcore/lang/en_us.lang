@@ -26,5 +26,7 @@ gregtech.material.unobtainium.tooltip=Atm referance:interrobang:
 gregtech.material.c_m_b_steel=CMB Steel
 gregtech.material.schrabidium=Schrabidium
 gregtech.material.australium=Australium
+gregtech.material.neoveline=Neoveline
+gregtech.material.verticium=Verticium
 
 gregtech.machine.boiler_tower.height=Stack Height: %s §9blocks
