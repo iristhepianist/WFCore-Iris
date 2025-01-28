@@ -52,20 +52,21 @@ import wfcore.api.recipes.WFCoreRecipeMaps;
 import java.util.List;
 
 public class MetaTileEntityStrandCaster extends RecipeMapPrimitiveMultiblockController {
-
+/*
     private void resetTileAbilities() {
         this.inputInventory = new GTItemStackHandler(this, 0);
         this.inputFluidInventory = new FluidTankList(true);
         this.outputInventory = new GTItemStackHandler(this, 0);
         this.outputFluidInventory = new FluidTankList(true);
     }
-
+*/
     private static final TraceabilityPredicate SNOW_PREDICATE = new TraceabilityPredicate(
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
 
     public MetaTileEntityStrandCaster(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, WFCoreRecipeMaps.StrandCaster);
     }
+    /*
     @Override
     protected void initializeAbilities() {
         this.inputInventory = new ItemHandlerList(getAbilities((MultiblockAbility.IMPORT_ITEMS)));
@@ -73,6 +74,8 @@ public class MetaTileEntityStrandCaster extends RecipeMapPrimitiveMultiblockCont
         this.inputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.IMPORT_FLUIDS));
         this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
     }
+    */
+
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
