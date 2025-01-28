@@ -1,11 +1,9 @@
 package wfcore.common.proxy;
 
 import gregtech.api.GregTechAPI;
-import gregtech.api.block.VariantItemBlock;
 import gregtech.api.metatileentity.registry.MTEManager;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
-import gregtech.common.items.MetaItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -18,9 +16,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 import wfcore.Tags;
 import wfcore.WFCore;
-import wfcore.api.recipes.WFCoreRecipeMaps;
 import wfcore.common.materials.WFCoreMaterials;
-import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -32,15 +28,6 @@ public class CommonProxy {
     }
 
     public void load() {
-    }
-
-    @SubscribeEvent
-    public static void registerBlocks(@NotNull RegistryEvent.Register<Block> event) {
-        IForgeRegistry<Block> registry = event.getRegistry();
-
-        WFCoreMetaTileEntities.init();
-
-
     }
 
     @SubscribeEvent
