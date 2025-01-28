@@ -1,8 +1,7 @@
 package wfcore.common.recipe.chain;
 
-
-public class SwordOfTheDesmosChain {
+public class LargeBlastFurnace {
     public static void init() {
 
-     }
+        }
 }

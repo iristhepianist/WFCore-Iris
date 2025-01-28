@@ -2,42 +2,39 @@ package wfcore.common.metatileentities;
 
 
 
+
+import wfcore.common.metatileentities.multi.primitive.MetaTileEntityStrandCaster;
+import wfcore.common.metatileentities.multi.primitive.MetaTileEntityWarfactoryBlastFurnace;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import wfcore.WFCore;
-import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
+import gregtech.api.util.GTLog;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
 
+import static gregtech.api.util.GTUtility.gregtechId;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 
 public class WFCoreMetaTileEntities {
 
     public static MetaTileEntityProjector PROJECTOR;
-    public static MetaTileEntityLargeSteamForgeHammer LARGESTEAMFORGEHAMMER;
-    public static MetaTileEntityLargeSteamCompressor LARGESTEAMCOMPRESSOR;
-    public static MetaTileEntityLargeSteamWasher LARGESTEAMWASHER;
-    public static MetaTileEntityLargeSteamCentrifuge LARGESTEAMCENTRIFUGE;
-    public static MetaTileEntityLargeSteamMixer LARGESTEAMMIXER;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
-    public static MetaTileEntityBoilerTower BOILERTOWER;
+    public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
+    public static MetaTileEntityStrandCaster STRANDCASTER;
 
 
 
-    public static int id = 0;
+    public static int id = 700;
 
     public static void init() {
         //Multis
         PROJECTOR = registerMetaTileEntity(id++, new MetaTileEntityProjector(location("projector")));
-        LARGESTEAMFORGEHAMMER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamForgeHammer(location("largesteamforgehammer")));
-        LARGESTEAMCOMPRESSOR = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCompressor(location("largesteamcompressor")));
-        LARGESTEAMWASHER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamWasher(location("largesteamwasher")));
-        LARGESTEAMCENTRIFUGE = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamCentrifuge(location("largesteamcentrifuge")));
-        LARGESTEAMMIXER = registerMetaTileEntity(id++, new MetaTileEntityLargeSteamMixer(location("largesteammixer")));
-        STEAMWIREMILL = registerMetaTileEntity(id++, new MetaTileEntitySteamWiremill(location("steamwiremill")));
-        BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
+        LARGEBLASTFURNACE = registerMetaTileEntity(id++, new MetaTileEntityWarfactoryBlastFurnace(location("largeblastfurnace")));
+        STRANDCASTER = registerMetaTileEntity(id++, new MetaTileEntityStrandCaster(location("strandcaster")));
+
+        GTLog.logger.info("Who the fuck reads these lmaoooo");
 
     }
+
 
     private static ResourceLocation location(@NotNull String name) {
         return new ResourceLocation("wfcore", name);

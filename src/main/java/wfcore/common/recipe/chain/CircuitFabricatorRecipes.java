@@ -1,8 +1,7 @@
 package wfcore.common.recipe.chain;
 
-
-public class SwordOfTheDesmosChain {
+public class CircuitFabricatorRecipes {
     public static void init() {
 
-     }
+    }
 }
