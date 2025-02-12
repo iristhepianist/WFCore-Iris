@@ -20,6 +20,7 @@ public class WFCoreMetaTileEntities {
     public static MetaTileEntityProjector PROJECTOR;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
     public static MetaTileEntityBoilerTower BOILERTOWER;
+    public static SteamPCBFactory STEAM_PCB_FACTORY_STEEL;
     public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
     public static MetaTileEntityStrandCaster STRANDCASTER;
 
@@ -35,7 +36,8 @@ public class WFCoreMetaTileEntities {
         STRANDCASTER = registerMetaTileEntity(id++, new MetaTileEntityStrandCaster(location("strandcaster")));
 
         GTLog.logger.info("Who the fuck reads these lmaoooo");
-
+        STEAM_PCB_FACTORY_STEEL = registerMetaTileEntity(16000,
+                new SteamPCBFactory(gregtechId("steam_pcb_factory"), true));
     }
 
 
