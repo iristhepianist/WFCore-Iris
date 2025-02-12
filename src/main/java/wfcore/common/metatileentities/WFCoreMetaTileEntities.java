@@ -23,7 +23,7 @@ public class WFCoreMetaTileEntities {
 
 
 
-    public static int id = 700;
+    public static int id = 0;
 
     public static void init() {
         //Multis
