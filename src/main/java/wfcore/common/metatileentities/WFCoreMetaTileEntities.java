@@ -28,6 +28,7 @@ public class WFCoreMetaTileEntities {
     public static void init() {
         //Multis
         PROJECTOR = registerMetaTileEntity(id++, new MetaTileEntityProjector(location("projector")));
+        BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
         LARGEBLASTFURNACE = registerMetaTileEntity(id++, new MetaTileEntityWarfactoryBlastFurnace(location("largeblastfurnace")));
         STRANDCASTER = registerMetaTileEntity(id++, new MetaTileEntityStrandCaster(location("strandcaster")));
 
