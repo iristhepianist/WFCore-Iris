@@ -1,11 +1,16 @@
 package wfcore.common.materials;
 
-
-import gregtech.api.GTValues;
-import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty.GasTier;
+import gregtech.api.unification.material.properties.DustProperty;
+import gregtech.api.unification.material.properties.FluidPipeProperties;
+import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.GTValues;
+import gregtech.api.unification.Elements;
+import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.unification.material.properties.BlastProperty.GasTier;
+
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;

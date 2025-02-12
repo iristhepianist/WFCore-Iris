@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import wfcore.common.materials.WFCoreMaterials;
 import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 import wfcore.common.proxy.CommonProxy;
-import wfcore.common.recipe.chain.SwordOfTheDesmosChain;
+import wfcore.common.recipe.chain.*;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
 public class WFCore {
@@ -47,6 +47,10 @@ public class WFCore {
     // Register recipes here (Remove if not needed)
     public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         SwordOfTheDesmosChain.init();
+        SteamWiremillRecipes.init();
+        CircuitFabricatorRecipes.init();
+        LargeBlastFurnace.init();
+        StrandCaster.init();
     }
 
     @SubscribeEvent

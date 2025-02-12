@@ -1,8 +1,7 @@
 package wfcore.api.recipes;
-
-
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.RecipeMapBuilder;
 
 import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;

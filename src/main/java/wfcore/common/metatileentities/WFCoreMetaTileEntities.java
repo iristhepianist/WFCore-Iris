@@ -8,6 +8,7 @@ import wfcore.common.metatileentities.multi.primitive.MetaTileEntityWarfactoryBl
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import gregtech.api.util.GTLog;
+import wfcore.common.metatileentities.multi.MetaTileEntityBoilerTower;
 import wfcore.common.metatileentities.multi.electric.*;
 import wfcore.common.metatileentities.multi.steam.*;
 
@@ -18,6 +19,7 @@ public class WFCoreMetaTileEntities {
 
     public static MetaTileEntityProjector PROJECTOR;
     public static MetaTileEntitySteamWiremill STEAMWIREMILL;
+    public static MetaTileEntityBoilerTower BOILERTOWER;
     public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
     public static MetaTileEntityStrandCaster STRANDCASTER;
 
