@@ -62,28 +62,26 @@ import wfcore.api.recipes.WFCoreRecipeMaps;
 import java.util.List;
 
 public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMultiblockController {
-/*
+
     private void resetTileAbilities() {
         this.inputInventory = new GTItemStackHandler(this, 0);
         this.inputFluidInventory = new FluidTankList(true);
         this.outputInventory = new GTItemStackHandler(this, 0);
         this.outputFluidInventory = new FluidTankList(true);
     }
-*/
+
     private static final TraceabilityPredicate SNOW_PREDICATE = new TraceabilityPredicate(
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
 
     public MetaTileEntityWarfactoryBlastFurnace(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, WFCoreRecipeMaps.Large_Blast_Furnace);
     }
-    /*
     @Override
     protected void initializeAbilities() {
         this.inputInventory = new ItemHandlerList(getAbilities((MultiblockAbility.IMPORT_ITEMS)));
         this.outputInventory = new ItemHandlerList(getAbilities((MultiblockAbility.EXPORT_ITEMS)));
         this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
     }
-    */
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
