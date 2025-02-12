@@ -21,7 +21,7 @@ public class HbmMaterials {
     public static void register() {
         int id = 800;
         AdvancedAlloy = new Material.Builder(id++, gregtechId("Advanced_Alloy"))
-                .cableProperties(GTValues.V[GTValues.LV], 1, 0, true)
+                .cableProperties(GTValues.V[GTValues.LV], 4, 0, true)
                 .color(0xE24207).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
@@ -31,39 +31,39 @@ public class HbmMaterials {
                 .blast(b -> b.temp(1373, GasTier.LOW).blastStats(VA[MV], 200))
                 .build();
         Desh = new Material.Builder(id++, gregtechId("Workers_Alloy"))
-                .cableProperties(GTValues.V[GTValues.EV], 1, 0, true)
+                .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0xA80300).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
                 .flags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME,
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
-                .blast(b -> b.temp(2700, GasTier.HIGH).blastStats(VA[IV], 2000))
+                .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
                 .build();
         Australium = new Material.Builder(id++, gregtechId("Australium"))
-                .cableProperties(GTValues.V[GTValues.ZPM], 1, 0, true)
+                .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0xFED73A).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
                 .flags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME,
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
-                .blast(b -> b.temp(8600, GasTier.HIGHEST).blastStats(VA[UV], 8000))
+                .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
                 .build();
         Schrabidium = new Material.Builder(id++, gregtechId("Schrabidium"))
-                .cableProperties(GTValues.V[GTValues.IV], 1, 0, true)
+                .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0x2CD8DF).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
                 .flags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME,
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
-                .blast(b -> b.temp(5400, GasTier.HIGHER).blastStats(VA[6], 4000))
+                .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
                 .build();
         Bromine.setProperty(PropertyKey.DUST, new DustProperty());
         Bromine.setProperty(PropertyKey.INGOT, new IngotProperty());
         Actinium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        /*Unobtainium = new Material.Builder(id++, gregtechId("Unobtainium"))
+        Unobtainium = new Material.Builder(id++, gregtechId("Unobtainium"))
                 .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0x013C7F).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
@@ -72,30 +72,30 @@ public class HbmMaterials {
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
                 .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
-                .build();*/
+                .build();
         CMBSteel = new Material.Builder(id++, gregtechId("C_M_B_Steel"))
-                .cableProperties(GTValues.V[LuV], 1, 0, true)
+                .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0x001431).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
                 .flags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME,
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
-                .blast(b -> b.temp(5400, GasTier.HIGHEST).blastStats(VA[7], 2000))
+                .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
                 .build();
         Astatine.setProperty(PropertyKey.DUST, new DustProperty());
         Astatine.setProperty(PropertyKey.INGOT, new IngotProperty());
         Neoveline = new Material.Builder(id++, gregtechId("Neoveline"))
-                .cableProperties(GTValues.V[GTValues.UIV], 4, 0, true)
+                .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0x49FD13).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
                 .iconSet(METALLIC)
                 .flags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME,
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
-                .blast(b -> b.temp(12600, GasTier.LOW).blastStats(VA[UXV], 200))
+                .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
                 .build();
-        /*Verticium = new Material.Builder(id++, gregtechId("Verticium"))
+        Verticium = new Material.Builder(id++, gregtechId("Verticium"))
                 .cableProperties(GTValues.V[GTValues.MV], 4, 0, true)
                 .color(0x29AE01).ingot()
                 .liquid(new FluidBuilder().temperature(1373))
@@ -104,7 +104,7 @@ public class HbmMaterials {
                         GENERATE_DOUBLE_PLATE)
                 .fluidPipeProperties(1200, 40, true)
                 .blast(b -> b.temp(2700, GasTier.LOW).blastStats(VA[HV], 200))
-                .build();*/
+                .build();
     }
 
 }
