@@ -24,7 +24,10 @@ import wfcore.common.OCDrivers.DriverRadar;
 import wfcore.common.materials.WFCoreMaterials;
 import wfcore.common.metatileentities.WFCoreMetaTileEntities;
 import wfcore.common.proxy.CommonProxy;
+import wfcore.common.radarActivity.RadarActivity;
 import wfcore.common.recipe.chain.*;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
 public class WFCore {
@@ -71,6 +74,8 @@ public class WFCore {
     // load "Do your mod setup. Build whatever data structures you care about." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
     }
+
+    public static final ConcurrentHashMap<Integer, RadarActivity> dimensionWiseRadar = new ConcurrentHashMap<>(16); // stores
 
     @EventHandler
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)

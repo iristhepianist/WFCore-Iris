@@ -47,14 +47,14 @@ public class DriverRadar extends DriverSidedTileEntity {
             super(holder, tileEntity, "radar");
         }
 
-        @Callback(doc = "setLevel(): --  sets activity at chunk.")
+        @Callback(doc = "setLevel(x, z, level): --  sets activity at chunk. (dev command)")
         public Object[] setLevel(final Context context, final Arguments args) {
-            return new Object[] { tileEntity.addActivity(0, 0, 1)};
+            return new Object[] { tileEntity.addActivity(args.checkInteger(0), args.checkInteger(1), args.checkInteger(2))};
         }
 
-        @Callback(doc = "getLevel(): --  sets activity at chunk.")
+        @Callback(doc = "getLevel(x, z): --  gets activity at chunk.")
         public Object[] getLevel(final Context context, final Arguments args) {
-            return new Object[] { tileEntity.scanChunk(0,0)};
+            return new Object[] { tileEntity.scanChunk(args.checkInteger(0), args.checkInteger(1))};
         }
 
         @Callback(doc = "testFunct(): --  adds 2 numbers")

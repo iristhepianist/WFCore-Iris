@@ -8,6 +8,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import wfcore.common.radarActivity.RadarActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,13 +63,13 @@ public class MultiblockRadarLogic {
     public int scanChunk(int x, int z) {
         MinecraftServer serverInstance = FMLCommonHandler.instance().getMinecraftServerInstance();
         Chunk chunk = serverInstance.getEntityWorld().getChunk(x, z);
-        return 42;
+        return RadarActivity.getActivity(chunk);
     }
 
     public void addChunkActivity(int x, int z, int level) {
         MinecraftServer serverInstance = FMLCommonHandler.instance().getMinecraftServerInstance();
         Chunk chunk = serverInstance.getEntityWorld().getChunk(x, z);
-        //RadarActivity.addActivity(chunk, level);
+        RadarActivity.addActivity(chunk, level);
     }
 /*
    public void performScan() {
