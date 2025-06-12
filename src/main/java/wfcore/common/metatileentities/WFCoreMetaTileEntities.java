@@ -3,6 +3,7 @@ package wfcore.common.metatileentities;
 
 
 
+import wfcore.common.metatileentities.multi.MetaTileEntityRadar;
 import wfcore.common.metatileentities.multi.primitive.MetaTileEntityStrandCaster;
 import wfcore.common.metatileentities.multi.primitive.MetaTileEntityWarfactoryBlastFurnace;
 import net.minecraft.util.ResourceLocation;
@@ -23,6 +24,7 @@ public class WFCoreMetaTileEntities {
     public static SteamPCBFactory STEAM_PCB_FACTORY_STEEL;
     public static MetaTileEntityWarfactoryBlastFurnace LARGEBLASTFURNACE;
     public static MetaTileEntityStrandCaster STRANDCASTER;
+    public static MetaTileEntityRadar RADAR;
 
 
 
@@ -34,6 +36,7 @@ public class WFCoreMetaTileEntities {
         BOILERTOWER = registerMetaTileEntity(id++, new MetaTileEntityBoilerTower(location("boilertower")));
         LARGEBLASTFURNACE = registerMetaTileEntity(id++, new MetaTileEntityWarfactoryBlastFurnace(location("largeblastfurnace")));
         STRANDCASTER = registerMetaTileEntity(id++, new MetaTileEntityStrandCaster(location("strandcaster")));
+        RADAR = registerMetaTileEntity(id++, new MetaTileEntityRadar((location("radar"))));
 
         GTLog.logger.info("Who the fuck reads these lmaoooo");
         STEAM_PCB_FACTORY_STEEL = registerMetaTileEntity(16000,
