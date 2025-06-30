@@ -50,7 +50,7 @@ import org.jetbrains.annotations.Nullable;
 import wfcore.api.recipes.WFCoreRecipeMaps;
 
 import java.util.List;
-
+/*
 public class MetaTileEntityStrandCaster extends RecipeMapPrimitiveMultiblockController {
 
     private void resetTileAbilities() {
@@ -172,3 +172,4 @@ public class MetaTileEntityStrandCaster extends RecipeMapPrimitiveMultiblockCont
     }
 
 }
+*/

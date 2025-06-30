@@ -65,6 +65,7 @@ import static gregtech.api.capability.GregtechDataCodes.BOILER_HEAT;
 import static gregtech.api.capability.GregtechDataCodes.BOILER_LAST_TICK_STEAM;
 import static gregtech.api.util.RelativeDirection.*;
 
+/*
 public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase implements IProgressBarMultiblock {
 
     public final BoilerType boilerType;
@@ -406,6 +407,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
      * Returns an int[] of {AmountFilled, Capacity} where capacity is the sum of hatches with some water in them.
      * If there is no water in the boiler (or the structure isn't formed, both of these values will be zero.
      */
+/*
     private int[] getWaterAmount() {
         if (!isStructureFormed()) return new int[] { 0, 0 };
         List<IFluidTank> tanks = getAbilities(MultiblockAbility.IMPORT_FLUIDS);
@@ -725,6 +727,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
          * @param amount       the amount to drain
          * @return a valid boiler fluid from a container
          */
+/*
         @Nullable
         private static FluidStack getBoilerFluidFromContainer(@NotNull IFluidHandler fluidHandler, int amount) {
             if (amount == 0) return null;
@@ -757,3 +760,4 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
         }
     }
 }
+*/

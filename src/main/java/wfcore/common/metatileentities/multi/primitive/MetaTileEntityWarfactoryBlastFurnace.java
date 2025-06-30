@@ -61,6 +61,7 @@ import wfcore.api.recipes.WFCoreRecipeMaps;
 
 import java.util.List;
 
+/*
 public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMultiblockController {
 
     private void resetTileAbilities() {
@@ -208,3 +209,4 @@ public class MetaTileEntityWarfactoryBlastFurnace extends RecipeMapPrimitiveMult
     }
 
 }
+*/

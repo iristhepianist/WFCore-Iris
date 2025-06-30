@@ -35,6 +35,7 @@ import java.util.List;
 import static gregtech.client.renderer.texture.Textures.BRONZE_PLATED_BRICKS;
 import static gregtech.client.renderer.texture.Textures.SOLID_STEEL_CASING;
 
+/*
 public class MetaTileEntitySteamWiremill extends RecipeMapSteamMultiblockController {
 
     private static final int PARALLEL_LIMIT = 4;
@@ -110,3 +111,4 @@ public class MetaTileEntitySteamWiremill extends RecipeMapSteamMultiblockControl
         }
     }
 }
+*/
