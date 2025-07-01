@@ -13,7 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import wfcore.api.recipes.WFCoreRecipeMaps;
-/*
+
 public class SteamPCBFactory extends InsaneSteamMetaTileEntity {
 
     public SteamPCBFactory(ResourceLocation metaTileEntityId, boolean isHighPressure) {
@@ -56,4 +56,4 @@ public class SteamPCBFactory extends InsaneSteamMetaTileEntity {
 }
 
 
-*/
+

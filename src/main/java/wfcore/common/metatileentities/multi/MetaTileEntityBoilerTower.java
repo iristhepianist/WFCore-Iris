@@ -65,7 +65,7 @@ import static gregtech.api.capability.GregtechDataCodes.BOILER_HEAT;
 import static gregtech.api.capability.GregtechDataCodes.BOILER_LAST_TICK_STEAM;
 import static gregtech.api.util.RelativeDirection.*;
 
-/*
+
 public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase implements IProgressBarMultiblock {
 
     public final BoilerType boilerType;
@@ -407,7 +407,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
      * Returns an int[] of {AmountFilled, Capacity} where capacity is the sum of hatches with some water in them.
      * If there is no water in the boiler (or the structure isn't formed, both of these values will be zero.
      */
-/*
+
     private int[] getWaterAmount() {
         if (!isStructureFormed()) return new int[] { 0, 0 };
         List<IFluidTank> tanks = getAbilities(MultiblockAbility.IMPORT_FLUIDS);
@@ -486,7 +486,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
                     fluidTank.drain(dieselRecipe.getFluidInputs().get(0).getAmount() * FLUID_DRAIN_MULTIPLIER, true);
                     // divide by 2, as it is half burntime for combustion
                     setMaxProgress(adjustBurnTimeForThrottle(Math.max(1, boiler.boilerType.runtimeBoost(
-                            (Math.abs(dieselRecipe.getEUt()) * dieselRecipe.getDuration()) / FLUID_BURNTIME_TO_EU / 2))));
+                            (int) ((Math.abs(dieselRecipe.getEUt()) * dieselRecipe.getDuration()) / FLUID_BURNTIME_TO_EU / 2)))));
                     didStartRecipe = true;
                     break;
                 }
@@ -499,8 +499,8 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
                     fluidTank.drain(denseFuelRecipe.getFluidInputs().get(0).getAmount() * FLUID_DRAIN_MULTIPLIER, true);
                     // multiply by 2, as it is 2x burntime for semi-fluid
                     setMaxProgress(adjustBurnTimeForThrottle(
-                            Math.max(1, boiler.boilerType.runtimeBoost((Math.abs(denseFuelRecipe.getEUt()) *
-                                    denseFuelRecipe.getDuration() / FLUID_BURNTIME_TO_EU * 2)))));
+                            Math.max(1, boiler.boilerType.runtimeBoost((int) (Math.abs(denseFuelRecipe.getEUt()) *
+                                                                denseFuelRecipe.getDuration() / FLUID_BURNTIME_TO_EU * 2)))));
                     didStartRecipe = true;
                     break;
                 }
@@ -540,7 +540,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
         @Override
         protected void updateRecipeProgress() {
             if (canRecipeProgress) {
-                int generatedSteam = this.recipeEUt * getMaximumHeatFromMaintenance() / getMaximumHeat();
+                int generatedSteam = Math.toIntExact(this.recipeEUt * getMaximumHeatFromMaintenance() / getMaximumHeat());
                 if (generatedSteam > 0) {
                     long amount = (generatedSteam + STEAM_PER_WATER) / STEAM_PER_WATER;
                     excessWater += amount * STEAM_PER_WATER - generatedSteam;
@@ -615,7 +615,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
         }
 
         @Override
-        public int getInfoProviderEUt() {
+        public long getInfoProviderEUt() {
             return this.lastTickSteamOutput;
         }
 
@@ -710,11 +710,11 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
             return 0;
         }
 
-        @Override
-        protected boolean drawEnergy(int recipeEUt, boolean simulate) {
-            GTLog.logger.error("Large Boiler called drawEnergy(), this should not be possible!");
-            return false;
-        }
+//        @Override
+//        protected boolean drawEnergy(int recipeEUt, boolean simulate) {
+//            GTLog.logger.error("Large Boiler called drawEnergy(), this should not be possible!");
+//            return false;
+//        }
 
         @Override
         public long getMaxVoltage() {
@@ -727,7 +727,7 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
          * @param amount       the amount to drain
          * @return a valid boiler fluid from a container
          */
-/*
+
         @Nullable
         private static FluidStack getBoilerFluidFromContainer(@NotNull IFluidHandler fluidHandler, int amount) {
             if (amount == 0) return null;
@@ -760,4 +760,3 @@ public class MetaTileEntityBoilerTower extends MultiblockWithDisplayBase impleme
         }
     }
 }
-*/
